@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-//import gg from 'meteor/accounts-password';
+import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor'
 import { createContainer } from 'meteor/react-meteor-data';
 
@@ -26,12 +26,28 @@ class App extends Component {
     });*/
 	 Meteor.loginWithPassword(text, text1,((error,result)=>{
 		if(error)
+		{	
+			
+			alert(error.error);
+		}
+		else
+		{
+			alert('good');
+			result.writeHead(302,{
+				'Location': 'your/404/path.html'
+			});
+			result.end();
+		}
+		}));
+	/*options={};
+	options.password=String(text1);
+	options.username=text;
+	Accounts.createUser(options,((error,result)=>{
+		if(error)
 			alert('tmre');
 		else
 			alert('good');
-
-		}));
-
+	}));*/
     // Clear form
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
     ReactDOM.findDOMNode(this.refs.text1Input).value = '';
