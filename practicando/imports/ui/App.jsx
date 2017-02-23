@@ -9,7 +9,7 @@ import { Tasks } from '../api/tasks.js';
 import Task from './Task.jsx';
 
 
-
+import AppRegister from './AppRegister.jsx';
 
 // App component - represents the whole app
 class App extends Component {
@@ -32,13 +32,10 @@ class App extends Component {
 		}
 		else
 		{
-			alert('good');
-			result.writeHead(302,{
-				'Location': 'your/404/path.html'
-			});
-			result.end();
+			window.location='https://www.google.com.pe/';
 		}
-		}));
+	}
+	) ) ;
 	/*options={};
 	options.password=String(text1);
 	options.username=text;
@@ -52,6 +49,26 @@ class App extends Component {
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
     ReactDOM.findDOMNode(this.refs.text1Input).value = '';
   }
+  
+  handleRegister(event) {
+	//window.location='https://www.google.com.pe/';
+	
+	ReactDOM.render(<AppRegister />, document.getElementById('render-target'));
+  }
+  handleRecover(event) {
+ 	/*event.preventDefault();
+	options={};
+	options.email='kpruiz11@gmail.com';
+	callback=function(error){
+		if(error)
+			alert(error);
+		else
+			alert('Enviado mensaje');
+	};
+	Accounts.forgotPassword(options ,callback );*/
+	//Accounts.sendVerificationEmail(Meteor.userId(), 'kpruiz11@gmail.com' );	
+
+  }
   renderTasks() {
     return this.props.tasks.map((task) => (
       <Task key={task._id} task={task} />
@@ -62,7 +79,7 @@ class App extends Component {
     return (
       <div className="container">
         <header>
-          <h1>Registro</h1>
+          <h1>Login</h1>
       	 <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
            <ul>nombre  <input
               type="text"
@@ -80,6 +97,8 @@ class App extends Component {
 			<button >Enviar</button>
 			</ul>
 			</form>
+		<button onClick={this.handleRegister.bind(this)}>Register</button>
+		<button onClick={this.handleRecover.bind(this)}> Recupera contraseña</button>
 		</header>
 
       </div>
