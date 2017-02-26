@@ -18,12 +18,8 @@ export default React.createClass({
 			if(error)
 				alert('tmre');
 			else
-				alert('good');
+				window.location='#';
 		}));
-    	// Clear form
-    	ReactDOM.findDOMNode(this.refs.textInput).value = '';
-    	ReactDOM.findDOMNode(this.refs.text1Input).value = '';
-    	ReactDOM.findDOMNode(this.refs.text2Input).value = '';
 	},
 	handleRecover(event){},
 	render(){
