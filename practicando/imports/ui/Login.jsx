@@ -15,7 +15,7 @@ export default React.createClass(
 					alert(error.error);
 					}
 					else{
-						window.location='#';
+						window.location='#/user';
 					}
 					})) ;
 		},

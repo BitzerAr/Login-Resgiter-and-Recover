@@ -20,7 +20,7 @@ export default React.createClass(
 					alert(error);
 					}
 					else{
-					window.location='#';
+					window.location='/';
 					}
 					})) ;
 
