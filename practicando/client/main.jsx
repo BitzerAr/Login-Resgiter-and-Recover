@@ -10,7 +10,7 @@ Meteor.startup(() => {
   render(
 		<Router history={hashHistory}>
 			<Route path="/" component={App}/>
-			<Route path="/login" component={Login}/>
+			<Route path="/login" component={Login}/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 			<Route path="/register" component={Register}/>
 		</Router>
 		, document.getElementById('render-target'));
