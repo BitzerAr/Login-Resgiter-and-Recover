@@ -15,6 +15,7 @@ import RecoverPassword from '../imports/ui/RecoverPassword.jsx';
 import ResetPassword from '../imports/ui/ResetPassword.jsx';
 import ShowUser from '../imports/ui/ShowUser.jsx';
 Meteor.startup(() => {
+<<<<<<< HEAD
 		render(
 				<Router history={hashHistory}>
 				<Route path="/" component={App}/>
@@ -30,3 +31,13 @@ Meteor.startup(() => {
 				else
 				window.location='#/login';
 		});
+=======
+  render(
+		<Router history={hashHistory}>
+			<Route path="/" component={App}/>
+			<Route path="/login" component={Login}/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+			<Route path="/register" component={Register}/>
+		</Router>
+		, document.getElementById('render-target'));
+});
+>>>>>>> b870c63bb77c4c68d431c8f8a4057fad689b850d
