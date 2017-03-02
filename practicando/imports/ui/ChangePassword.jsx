@@ -46,6 +46,7 @@ export default React.createClass(
 					/></ul> 
 					<ul>	
 					<input type="submit" value="Change Password"/>
+					<input type="submit" value="Change Password"/>
 					</ul>
 					</form>
 					</header>
