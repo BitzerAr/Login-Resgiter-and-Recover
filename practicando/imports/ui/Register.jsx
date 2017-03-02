@@ -10,15 +10,17 @@ export default React.createClass({
     	const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
     	const text1 = ReactDOM.findDOMNode(this.refs.text1Input).value.trim();		
     	const text2 = ReactDOM.findDOMNode(this.refs.text2Input).value.trim();
+	
 		options={};
 		options.password=String(text1);
 		options.username=text;
 		options.email=text2;
+
 		Accounts.createUser(options,((error,result)=>{
 			if(error)
 				alert('tmre');
 			else
-				window.location='#';
+				window.location='#/login';
 		}));
 	},
 	handleRecover(event){},
@@ -43,6 +45,7 @@ export default React.createClass({
               	ref="text2Input"
 				  	required
             	/></ul>
+
 				<ul>	
 				<button onClick={this.handleSubmit.bind(this)}>Enviar</button>
 				</ul>	

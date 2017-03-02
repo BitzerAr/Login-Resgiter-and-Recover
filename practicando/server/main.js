@@ -1,12 +1,17 @@
 //import '../imports/api/tasks.js';
-import '../imports/api/handleLogin.js';
-
+//import '../imports/api/handleLogin.js';
 import Steam from  'steam';
-
 import { Accounts } from 'meteor/accounts-base';
+Accounts.onCreateUser(function(options, user) {
 
+    if (Meteor.user() != null) {
+        Meteor.users.update({_id: Meteor.user()._id}, { $set: { 'services.steam.id': user.services.steam.id } });
+        return Meteor.user();
+    }
 
-
+    return user;
+});
+/*
 var logOnDetails = {      
     "account_name": "d2gb0004",
     "password": "passwordrandom123",
