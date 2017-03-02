@@ -2,6 +2,19 @@
 //import '../imports/api/handleLogin.js';
 import Steam from  'steam';
 import { Accounts } from 'meteor/accounts-base';
+if(Meteor.isServer) {
+  Meteor.startup(function () {
+    ServiceConfiguration.configurations.upsert(
+      { service: 'steam' },
+      {
+        $set: {
+          loginStyle: 'redirect', // THIS MUST BE SET TO REDIRECT
+          timeout: 10000          // 10 seconds
+        }
+      }
+    );
+  });
+}
 Accounts.onCreateUser(function(options, user) {
 
     if (Meteor.user() != null) {
